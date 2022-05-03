@@ -1,0 +1,38 @@
+Angular Review Exericse 1
+=========================
+Don't get bogged down - move on
+Ask me, ask each other, look online
+Enjoy (alter as you see fit)
+
+Add a component called 'review'  ( ng generate component review )
+In the review component .ts file declare a data-bound model for 'imgSize' ( use @Input() )
+In the review component .html file place an image with 'width' bound to your 'imgSize' model
+      <img src="https://placekitten.com/240/120" [width]="imgSize" />
+Add two buttons bound to the 'click' event
+One button should call a method to increase the 'imgSize' by 32 pixels
+The other should decrease the 'imgSize' by 32 pixels
+In both cases, make sure you are working with numeric values (rather than the default string values)
+Remember to put an instance of your component into app.component.html
+
+Now write a model object that specifies the image URL, some ALT text and some TITLE text
+Bind these values in to the <img> tag
+
+Next, write several of these objects in an array (each with different ALT and TITLE values)
+Use *ngFor to iterate over this array, showing an <img> For each member of the array
+All images should still have their 'width' controlled by the buttons
+
+Optional
+--------
+Pass the initial image URL in to the 'review' component from the main 'app' component
+In your size methods, ensure the size cannot go below 32 or above 1024
+Find a way to have buttons to control how many images are shown, by adding or removing image data in the array
+Also write code such that clicking an image will make it disappear from the page
+ (decide between using [hidden], *ngIf or manipulating the array directly)
+In the top level app, display how many images are currently in the array
+Use a pipe to show the title of each <img> as upper-case text for every image
+
+Super Optional
+--------------
+If you know how, pass the current value of 'imgSize' out to the parent component and display it's value there ( @Output() )
+If you understand about form field binding, make a slider so the user can control the value of 'imgSize'
+and another slider to control the number of images to be displayed
