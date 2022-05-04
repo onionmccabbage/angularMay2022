@@ -1,0 +1,90 @@
+Angular 5
+=========
+
+May 3-7
+Toby Dussek
+
+ 9:30 start
+11:00 coffee
+12:30 lunch
+ 3:00 tea
+ 4:30 end
+
+- best practices (why)
+- common practice
+- existing project - understand existing code
+- as much hands-on as possible
+- labs exercises
+
+Tuesday
+> Welcome and introductions
+- overview of Angular, cli, npm, archtecture
+- preparation for Angular 5 development
+- Modules, components, templates, data-binding interpolation
+- modern ES best practices
+> explore the prototype Angular app
+> scaffolding application using cli
+> pipes
+> looping over complex model data
+> *ngFor and *ngIf
+- when we MUST explicitly data-type things
+> simple event binding
+> simple form binding [()] two-way binding
+- passing an index to an iterable
+> passing bindings between components
+- using the documentation
+
+Wednesday
+> HttpClient
+- revisit @Input() and @Output() and data-bindings
+> services
+> Observables - .subscribe( ()=>{} )
+- Typescript
+- Life-cycle events, ngOnInit event
+- after lunch exercise
+- Forms: Template-driven forms and Reactive forms
+> production: AOT/JIT
+> cache-busting
+> separate NgModules transpile into ONE bundle...
+- template directive - efficiency of NO redraw
+> how do we install a particular version of Angular??
+  npm uninstall -g @angular/cli
+  then
+  npm install -g @angular/cli // for the latest version
+  npm install -g @angular/cli@1.7.4 // for Angular 5.x
+> latest Angular version... see https://update.angular.io/
+> compatibility issues, options when creating ng new
+> typescript in LATEST Angular is even more strict
+
+Versions of Angular
+- package.json indicates the required version
+
+Thursday
+- routing
+- routerLink syntax
+> ()=>{} // variations...
+- difference between ng-template and ng-content
+- building scalable apps (stateful apps)
+
+Friday
+- using classes (for typing, accessor/mutator etc.)
+- bullet proofing code: try-catch-finally etc.
+- generic design patterns
+- consolidate: what are the various 'directives'
+- passing data around
+- ECMAScript features
+
+Course repo
+https://github.com/onionmccabbage/angularMay2022
+remember to npm install (retrieves all teh node modules)
+
+
+
+
+
+
+
+
+
+http://api.openweathermap.org/data/2.5/weather?q=dublin,ie&APPID=48f2d5e18b0d2bc50519b58cce6409f1
+https://graph.facebook.com/mickeymouse/picture?type=normal

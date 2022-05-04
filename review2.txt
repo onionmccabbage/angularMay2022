@@ -1,0 +1,42 @@
+Angular Review Exercise 2 about 1 hr (until ~2:45 ish)
+=========================  I have uploaded a sample solution to the repository
+The user chooses a city and a country, then gets a weather report from 
+http://api.openweathermap.org/data/2.5/weather?q=dublin,ie&APPID=48f2d5e18b0d2bc50519b58cce6409f1&units=metric
+
+Preparation
+-----------
+Start a new Angular App called 'weather-app' (ng new weather-app)
+Delete everything from 'app.component.html'
+Make sure the imports are correct in 'app.module.ts' (include the FormsModule and HttpClientModule too)
+Generate a component called 'view' and a service called 'weather' 
+    ('ng generate component view' and 'ng generate service weather')
+In 'app.module.ts' make sure your service is imported and that it appears in 'providers'
+In 'app.component.html' show an instance of your view component: <app-view></app-view>
+
+Details
+-------
+In the service, instantiate the 'HttpClient' in the constructor
+Write a method to 'get' the weather from the API end-point URL (remember to accept parameters for city and country)
+Use back-tick syntax to replace 'dublin,ie' with `${city),${country}` (provided by the user)
+
+In the 'view' component, write a form that contains an <input> field for 'city'
+Also show a <select> tag where the user can choose a country, such as 'ie', 'gb', 'usa' etc.
+Bind these fields to data models in the component
+Provide a button at the bottom of the form
+When the user clicks the button, call a method that invokes your service
+Pass in the city and country as parameters to the service call
+
+Familiarize yourself with the returned weather JSON
+Initially, just show the loaded data in your 'view' component
+  e.g.  <pre>Results: {{weatherReport | json}}</pre>
+
+Then use the loaded data to show nicely formatted information, such as description and temperature
+  e.g. weatherDescription = this.weatherReport.weather[0].description
+	    temperature = this.weatherReport.main.temp
+
+Optional
+--------
+Make a weather call when the page first loads, using default city/country values
+Pass initial values for city/country as @Input() properties into the view component from the main app
+Whenever a weather report is returned, emit a custom event that passes the data to the parent component
+Show the key weather values (e.g. wind speed etc.) in the parent component, along with a time-stamp
