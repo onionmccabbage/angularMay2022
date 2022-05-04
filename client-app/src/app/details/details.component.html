@@ -1,0 +1,13 @@
+<section>
+  Current Category: {{category}}<br/>
+  current ID: {{id}}<br/>
+  <button (click)="makeApiCall()">Get Data</button>
+  <hr/>
+  <!-- convenient development technique -->
+  <pre>{{results |json}}</pre>
+  <!-- if the category is 'photos' then show the details of this photo -->
+  <div *ngIf="category=='photos'">
+    <dl>{{photo.title}}</dl>
+    <dd>{{photo.url}}<img [src]='photo.thumbnailUrl'/></dd>
+  </div>
+</section>

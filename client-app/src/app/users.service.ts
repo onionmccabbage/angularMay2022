@@ -12,4 +12,9 @@ export class UsersService {
   getUsers(){
     return this.http.get(this.userURL)
   }
+  getApiWithParams(cat:string, id:number){
+    // when building strings, use back-tick interpolation (ES6)
+    let url = `https://jsonplaceholder.typicode.com/${cat}/${id}`
+    return this.http.get(url) // here we async call the external api
+  }
 }

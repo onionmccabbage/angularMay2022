@@ -4,6 +4,18 @@
   <header><h2>Using HTTP and Services</h2></header>
   <nav><a href='angular.io'>docs</a></nav>
   <article>
+    <form ngForm>
+      <!-- here is a drop-down select for the categories -->
+      <select name="chosenCategory" [(ngModel)]="chosenCategory">
+        <option *ngFor="let cat of categories">{{cat}}</option>
+      </select>
+      <br/>
+      <input id="id" name="'id" [(ngModel)]="id" type="number" min="1" max="8" />
+    </form>
+    <hr/>
+    <app-details [category]="chosenCategory" [id]="id" ></app-details>
+  </article>
+  <article>
     <section>
       <h3>Here we consume an external API</h3>
       <aside>

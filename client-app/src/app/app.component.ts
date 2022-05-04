@@ -11,7 +11,11 @@ export class AppComponent implements OnInit {
   constructor(private userService:UsersService){}
 
   // properties of this component
-  users:Array<object> // typescipt lets us specify the expected data type
+  users:any //:Array<object> // typescipt lets us specify the expected data type
+  categories = ['users', 'todos', 'photos', 'albums', 'posts']
+  id = 1 // typescript infers this is a numeric data type
+  chosenCategory ='users' // this will be one of the 'categories'
+
   //methods of this component
   ngOnInit(): void {
       // make a call to the service as soon as this component is initialized
