@@ -1,0 +1,20 @@
+<!-- we should be using semantic tags for accessibility -->
+<section>
+  <h3>Use one-way bindings where possible</h3>
+  <h3>Two-way binding is more costly in resources</h3>
+  <!-- ngForm is built in to Angular - must add the module -->
+  <!-- <form myForm="ngForm"> -->
+    <!-- angular ASUMES our form is an ngForm -->
+  <form ngForm>
+    <!-- now it is an Angular form we can use form features -->
+    <!-- 'banana in a box' is [()] two-way binding for data -->
+    <input [(ngModel)]="user.email"  name="email" id="email" placeholder="please enter email" />
+    <br/>
+    <input [(ngModel)]="user.name"  name="name" id="name" placeholder="please enter username" />
+    <br/>
+    <!-- we can add a 'change' event handler -->
+    <input [(ngModel)]="w" name="w" id="'w" (change)="handleChange()"  type="range" min="64" max='640' step="64" />
+    <br/><p>Welcome {{user.name}} the value is {{w}}</p>
+
+  </form>
+</section>

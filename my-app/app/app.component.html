@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+    <!-- here we interpolate the data model -->
+    Welcome to {{ m.title }}
+  </h1>
+  <!-- [] inject a property INTO an element -->
+  <p [hidden]="m.obscured" >The number is {{m.num+3}}</p>
+  <!-- NB all values of HTML attributes are STRING -->
+  <img [src]="imgUrl" alt="access text" title="hover text" [width]="w" />
+  <hr/>
+  <!-- listen for events using round bracklets () -->
+  <!-- template directives (aka structural directives) (*) apply to the current element (in this case a button) -->
+  <button *ngIf="askCookies"  (click)="handleAgree()" id="btnAgree">Agree to cookies {{agreeToCookies}}</button>
+  <br/><h4>Today is {{today |date:'short'}}</h4>
+  <hr/>
+  <!-- iterate over our array to show the data members (products in this case) -->
+  <ul>
+    <li *ngFor="let item of products">
+      <!-- here we use a pipe '|' to modify the binding -->
+      {{item.name}} {{item.price |currency:'EUR'}}
+    </li>
+  </ul>
+  <hr/>
+  <!-- instantiate an instance of the child component -->
+  <!-- w can pass in initial values -->
+  <app-child [init]="m.title"></app-child>
+  <app-review [init]="imageInit" [imgSize]="w"></app-review>
+  <!-- we handle custom event with the built in $event -->
+  <app-about (custEv)="handleCustEv($event)"></app-about>
+</div>
