@@ -1,0 +1,17 @@
+<!-- here we build the template for our entry-point app -->
+<div>
+  <!-- use semantic tags for the page layout - good for accessibility -->
+  <header><h2>Using HTTP and Services</h2></header>
+  <nav><a href='angular.io'>docs</a></nav>
+  <article>
+    <section>
+      <h3>Here we consume an external API</h3>
+      <aside>
+        <!-- we can take ANY object and show it as text using the JSON pipe -->
+        <p>Results:{{users |json}}</p>
+      </aside>
+    </section>
+  </article>
+  <!-- use entities for special characters such as copyright symbol -->
+  <footer>&copy;2022 read our legal notice</footer>
+</div>
