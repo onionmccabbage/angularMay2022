@@ -8,7 +8,12 @@
       <h3>Here we consume an external API</h3>
       <aside>
         <!-- we can take ANY object and show it as text using the JSON pipe -->
-        <p>Results:{{users |json}}</p>
+        <!-- <p>Results:{{users |json}}</p> -->
+      </aside>
+      <aside>
+        <ul>
+          <li *ngFor="let user of users" >{{user.name}} {{user.username}}</li>
+        </ul>
       </aside>
     </section>
   </article>
