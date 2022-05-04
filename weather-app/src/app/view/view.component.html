@@ -1,0 +1,21 @@
+<div>
+  <form ngForm>
+    <input name='city' required placeholder="enter a city" [(ngModel)]=inCity /><br/>
+    <select name='country' [(ngModel)]=inCountry>
+      <option value='ie'>Ireland</option>
+      <option value='uk'>Great Britain</option>
+      <option value='usa'>United States</option>
+      <option value='de'>Germany</option>
+      <option value='fr'>France</option>
+      <option value='aus'>Australia</option>
+    </select><br/>
+    <button id='btnGo' (click)=makeWeatherCall()>Go</button>
+  </form>
+
+  <h4>Report for {{inCity}}, {{inCountry}}</h4>
+  <p *ngIf="weatherReport" >Description: {{weatherDesc}}</p>
+                         <!-- here we format the temperature to show two decimal places -->
+  <p *ngIf="weatherReport" >Temperature: {{ weatherReport.main.temp | number:'1.2-2' }}&deg;</p>
+  <!-- for development it's handy to see the returned data -->
+  <pre>Results: {{weatherReport | json}}</pre>
+</div>
