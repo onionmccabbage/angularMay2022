@@ -1,0 +1,9 @@
+<section *ngIf="planetsData">
+  <h3>Results for 'Planets' with id {{id}}</h3>
+  <dt>{{planetsData?.name}}</dt>
+  <dd>Population: {{planetsData.population}}</dd>
+  <dd>Orbital Period: {{planetsData.orbital_period}}</dd>
+  <dd>Diameter: {{planetsData.diameter}}</dd>
+  <hr/>
+  <pre>{{speciesData |json}}</pre>
+</section>

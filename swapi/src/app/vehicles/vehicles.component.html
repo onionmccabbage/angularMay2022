@@ -1,0 +1,9 @@
+<section *ngIf="vehiclesData">
+  <h3>Results for 'Vehicles' with id {{id}}</h3>
+  <dt>{{vehiclesData?.name}}</dt>
+  <dd>Model: {{vehiclesData.model}}</dd>
+  <dd>Manufacturer: {{vehiclesData.manufacturer}}</dd>
+  <dd>Crew: {{vehiclesData.crew}}</dd>
+  <hr/>
+  <pre>{{vehiclesData |json}}</pre>
+</section>

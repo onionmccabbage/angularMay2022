@@ -1,0 +1,10 @@
+<section *ngIf="personData">
+  <h3>Results for 'People' with id {{id}}</h3>
+  <!-- the question mark indicates an optional property - it may not yet exist -->
+  <dt>{{personData?.name}}</dt>
+  <dd>Height: {{personData.height}}</dd>
+  <dd>Eyes: {{personData.eye_color}}</dd>
+  <dd>Birthyear: {{personData.birth_year}}</dd>
+  <hr/>
+  <pre>{{personData |json}}</pre>
+</section>

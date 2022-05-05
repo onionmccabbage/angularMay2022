@@ -1,0 +1,9 @@
+<section *ngIf="speciesData">
+  <h3>Results for 'Species' with id {{id}}</h3>
+  <dt>{{speciesData?.name}}</dt>
+  <dd>Classification: {{speciesData.classification}}</dd>
+  <dd>Designation: {{speciesData.designation}}</dd>
+  <dd>Average Heigh: {{speciesData.average_height}}</dd>
+  <hr/>
+  <pre>{{speciesData |json}}</pre>
+</section>

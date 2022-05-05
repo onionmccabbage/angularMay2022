@@ -1,0 +1,18 @@
+<article>
+  <h2>SWAPI Review Exercise</h2>
+  <!-- no need to instantiate the search form, it is the default route -->
+  <!-- <app-search
+    (swapiEvent)="showTimestamp($event)"
+    [category]="defaultCat" [id]="defaultID"></app-search>
+    <aside *ngIf="ts">Last update: {{ts}}</aside> -->
+  <nav>
+    <a routerLink='/search'>Search</a> |
+    <a routerLink='/people/1'>Luke</a> |
+    <a routerLink='/species/3'>Wookie</a> |
+    <a routerLink='/planets/1'>Tatooine</a> |
+    <a routerLink='vehicles/4'>Sand Crawler</a>
+  </nav>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</article>

@@ -1,0 +1,20 @@
+<section>
+  <form #myForm='ngForm'>
+    <input [(ngModel)]='category' id="frmCat" name="frmCat" 
+      #frmCat='ngModel' required minlength="5" />
+    <section *ngIf="frmCat.invalid && (frmCat.dirty || frmCat.touched)">
+      <aside *ngIf="frmCat.errors.required">Category is required</aside>
+      <aside *ngIf="frmCat.errors.minlength" >Category must be five or more characters</aside>
+    </section>
+    <br />
+    <input [(ngModel)]='id' type="number" id="frmItemID" 
+    name="frmItemID" #frmItemID="ngModel" required min="1" max="9" />
+  </form>
+  <button id='btnGo' (click)='handleForm()'>Go</button>
+  <hr />
+  <aside *ngIf="swapi">
+    <dl>{{swapi.name}}</dl>
+  </aside>
+  <!-- show all the returned data to help with development -->
+  <pre>{{swapi | json}}</pre>
+</section>
