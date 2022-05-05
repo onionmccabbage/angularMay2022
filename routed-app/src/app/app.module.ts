@@ -13,7 +13,8 @@ import { ProductComponent } from './product/product.component';
 // declare routing routes
 const routes:Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
-  {path:'about', component:AboutComponent, data:{tel:123456789, email:'about@nonsuch.ie'}},
+  // we can target a specific routerOutlet by its name (see also the routerLink)
+  {path:'about', component:AboutComponent, data:{tel:123456789, email:'about@nonsuch.ie'}, outlet:'sidebar'},
   {path:'contact', component:ContactComponent},
   {path:'home', component:HomeComponent},
   // catch common mis-spellings or alternate/older names with redirects
