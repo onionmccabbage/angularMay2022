@@ -1,0 +1,34 @@
+<article>
+  <h2>Template driven Forms</h2>
+  <form ngForm>
+    <!-- for development we can observe  the state of field validation -->
+    <pre>Valid: {{username.valid}} Pristine:{{username.pristine}} 
+      Dirty: {{username.dirty}} Length: {{username.errors.minlength |json}}</pre>
+    <!-- we can implement form validation within the form itself -->
+    <!-- the hash # represents the name of this field ONLY WITHIN the FORM scope (nowhere else) -->
+    <input id="username" name="username" required minlength="4" 
+      [(ngModel)]="user.username" #username='ngModel'/>
+      <!-- we show messages based on teh condition of the LOCAL field name (#username) -->
+    <section *ngIf="username.invalid && (username.dirty || username.touched)">
+      <aside *ngIf="username.errors.required">The username is required</aside>
+      <aside *ngIf="username.errors.minlength" >Username must be four or more characters</aside>
+    </section>
+  </form>
+  <!-- for development, we can watch the form field values -->
+  <aside>
+    username is {{user.username}}
+  </aside>
+</article>
+<article>
+  <h3>Reactive Forms</h3>
+  <form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
+    <input formControlName="firstName" />
+    <input formControlName="lastName" />
+    <br/>
+    <button type="submit">Go</button>
+  </form>
+  <aside>
+    <!-- we can monitor data values here -->
+    <p>Full Name: {{fullname}}</p>
+  </aside>
+</article>
