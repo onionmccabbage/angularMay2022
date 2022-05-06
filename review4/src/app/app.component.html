@@ -1,0 +1,29 @@
+<div>
+  <article>
+    <section>
+      <h2>Review Exercise 4: Photos by Album ID</h2>
+    </section>
+    <!-- <ng-template > -->
+    <aside *ngIf="currentSelection">
+      {{currentSelection.title}} 
+      <br/><img [src]='currentSelection.thumbnailUrl' [title]="currentSelection.title"
+        [alt]="currentSelection.title" />
+    </aside>
+    <section>
+      <h4>Showing Photos in Album ID {{whichAlbum}}</h4>
+      <table>
+        <!-- <tr>
+          <th>ID</th><th>thumnailUrl</th><th>Title</th>
+        </tr> -->
+        <!-- we will repeatedly render the following table row, once for each ata member -->
+        <!-- <tr *ngFor="let p of pictures;let idx=index">
+          <td>{{p.id}}</td><td (click)="handleSelected(idx)">{{p.thumbnailUrl}}</td><td>{{p.title}}</td>
+        </tr> -->
+        <app-renderer *ngFor="let p of pictures;let idx=index" [p]="p" [idx]="idx"
+            (photoEvent)="handleSelected(idx)"
+            (deleteEvent)="deleteItem(idx)">
+        </app-renderer>
+      </table>
+    </section>
+  </article>
+</div>
