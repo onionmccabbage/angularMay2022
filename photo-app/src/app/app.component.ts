@@ -9,7 +9,7 @@ import { PhotoService } from './photo.service';
 })
 // the interface OnInit is implemented by ngOnInit
 export class AppComponent implements OnInit {
-  pictures:Array<string> // or string[] (equivalent)
+  pictures:Array<Photo> // or Photo[] (equivalent)
   currentSelection:Photo
   // whenever we use an http service in Angular it will look similar to this
   constructor(private photoService:PhotoService){}
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         
   }
   // NB the call-backs must be arrow-functions
-  handleSuccess=(d:Array<Photo>)=>{
+  handleSuccess=(d:Photo[]):void=>{ // or Array<photo>
     // console.log('handleSuccess has been called')
     this.pictures = d
   }
