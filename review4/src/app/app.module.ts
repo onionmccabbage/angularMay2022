@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { PhotoService } from './photo.service';
 import { RendererComponent } from './renderer/renderer.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { RendererComponent } from './renderer/renderer.component';
     RendererComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [PhotoService],
   bootstrap: [AppComponent]

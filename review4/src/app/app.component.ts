@@ -16,8 +16,12 @@ export class AppComponent implements OnInit {
   constructor(private photoService:PhotoService){}
 
   ngOnInit(): void {
-      this.photoService.getPhotosByAlbum(this.whichAlbum)
-        .subscribe( this.handleSuccess, this.handleProblems )
+    this.go()
+  }
+  
+  go(){
+    this.photoService.getPhotosByAlbum(this.whichAlbum)
+      .subscribe( this.handleSuccess, this.handleProblems )
   }
 
   handleSuccess=(d:IPhoto[]):void=>{
