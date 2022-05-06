@@ -6,10 +6,13 @@
     <!-- <aside>
       <pre>{{pictures |json}}</pre>
     </aside> -->
-    <aside *ngIf="currentSelection">
+    <!-- we use ng-template whenever we need a tag tha will not actually be rendered in the HTML -->
+    <ng-template *ngIf="currentSelection">
       <!-- show details of the clicked photo -->
-      {{currentSelection.category}} {{currentSelection.filename}}
-    </aside>
+      {{currentSelection.category}} {{currentSelection |json}} 
+      <br/><img [src]='fullPath' width="240" [title]="currentSelection.desc"
+        [alt]="currentSelection.desc" />
+    </ng-template>
     <section>
       <table>
         <tr>
@@ -17,6 +20,7 @@
         </tr>
         <!-- we will repeatedly render the following table row, once for each ata member -->
         <tr *ngFor="let p of pictures;let idx=index">
+          <!-- *ngFor is sugar-syntax for ngForOf which appears like this: <ng-template [ngforOf]='' >  -->
           <td (click)="handleSelected(idx)" >{{idx}}</td><td [title]="idx">{{p.filename}}</td><td>{{p.photographer}}</td><td>{{p.category}}</td><td>{{p.desc}}</td>
         </tr>
       </table>

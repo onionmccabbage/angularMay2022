@@ -1,5 +1,13 @@
-// we declare a custom data type to help with Typescript typings
-export class Photo { // or export interface Photo (without contructor)
+// exploring ts classes and interfaces
+export interface IPhoto { // typescript interface ensures we will implement all the required parts
+    filename:string
+    category:string
+    description:string
+    photographer:string
+    fullPath:string
+}
+
+class Snap implements IPhoto {
     filename:string
     category:string
     description:string
