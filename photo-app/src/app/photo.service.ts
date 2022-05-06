@@ -13,14 +13,5 @@ export class PhotoService {
   getPhotos():Observable<Photo[]> { // what would the return type be?
     // every http in Angular will return an Observable
     return this.http.get<Photo[]>(this.url)
-    // return this.http.get(this.url) // as Array<Photo>
-
-
-
   }
-
-
-  // listAll(): Observable<Picture[]> {
-  //   return this.httpClient.get<Picture[]>(this.url);
-  // }
 }
