@@ -1,0 +1,25 @@
+<div>
+  <article>
+    <section>
+      <h2>Consuming Data Iteratively</h2>
+    </section>
+    <!-- <aside>
+      <pre>{{pictures |json}}</pre>
+    </aside> -->
+    <aside *ngIf="currentSelection">
+      <!-- show details of the clicked photo -->
+      {{currentSelection.category}} {{currentSelection.filename}}
+    </aside>
+    <section>
+      <table>
+        <tr>
+          <th>Index</th><th>Filename</th><th>Photographer</th><th>Category</th><th>Description</th>
+        </tr>
+        <!-- we will repeatedly render the following table row, once for each ata member -->
+        <tr *ngFor="let p of pictures;let idx=index">
+          <td (click)="handleSelected(idx)" >{{idx}}</td><td [title]="idx">{{p.filename}}</td><td>{{p.photographer}}</td><td>{{p.category}}</td><td>{{p.desc}}</td>
+        </tr>
+      </table>
+    </section>
+  </article>
+</div>
