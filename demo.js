@@ -20,3 +20,13 @@ function fnZ(){ // avoid where possible - the lexical scoping is different in ol
     // do stuff here
 }
 
+try {
+    // code that might throw an error
+}
+catch(err){
+    console.log(err)
+}
+finally {
+    // always runs - even if there was an error
+}
+

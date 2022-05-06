@@ -1,0 +1,26 @@
+Angular Review 4 until ~2:45
+================
+Begin a new Angular project 'ng new review4'
+
+You will present the user with a form to specify which albumId they want
+Then write a service to get all the photos for that albumId
+  `https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`
+
+Show all the returned photo details (e.g. in a table)
+Clicking on an item in the table should show the actual image thumbnail
+
+Optional
+--------
+Write an interface for a photo (NB this is different to this morning)
+Data type your service so it returns an Observable<IPhoto[]>
+Also enforce data types in your app
+
+Write a separate component which is used to render an instance of a Photo
+Then use this component in the iterator
+
+Provide a means to delete items from the (local) data by clicking a row in the table
+(pass the photo index and use it to .splice() the array)
+
+Remember to handle ERRORS
+
+NB feel free to apply interface and typings to the weather or wsapi examples

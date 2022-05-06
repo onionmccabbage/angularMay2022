@@ -18,35 +18,32 @@ Toby Dussek
 
 Tuesday
 > Welcome and introductions
-- overview of Angular, cli, npm, archtecture
-- preparation for Angular 5 development
-- Modules, components, templates, data-binding interpolation
-- modern ES best practices
+> overview of Angular, cli, npm, archtecture
+> preparation for Angular 5 development
+> Modules, components, templates, data-binding interpolation
+> modern ES best practices
 > explore the prototype Angular app
 > scaffolding application using cli
 > pipes
 > looping over complex model data
 > *ngFor and *ngIf
-- when we MUST explicitly data-type things
+> when we MUST explicitly data-type things - when TypeScript cannot infer the type
 > simple event binding
 > simple form binding [()] two-way binding
-- passing an index to an iterable
 > passing bindings between components
-- using the documentation
+> ()=>{} // variations...
+> using the documentation
 
 Wednesday
 > HttpClient
-- revisit @Input() and @Output() and data-bindings
+> revisit @Input() and @Output() and data-bindings
 > services
 > Observables - .subscribe( ()=>{} )
-- Typescript
-- Life-cycle events, ngOnInit event
-- after lunch exercise
-- Forms: Template-driven forms and Reactive forms
+> Typescript
+> after lunch exercise
 > production: AOT/JIT
 > cache-busting
 > separate NgModules transpile into ONE bundle...
-- template directive - efficiency of NO redraw
 > how do we install a particular version of Angular??
   npm uninstall -g @angular/cli
   then
@@ -57,27 +54,46 @@ Wednesday
 > typescript in LATEST Angular is even more strict
 
 Versions of Angular
-- package.json indicates the required version
+> package.json indicates the required version ~ ^
 
 Thursday
-- routing
-- routerLink syntax
-> ()=>{} // variations...
-- difference between ng-template and ng-content
-- building scalable apps (stateful apps)
+> routing > how to target a routerOutlet
+          > how to consume data passed to a route
+> base
+> routerLink syntax
+> Forms: Template-driven forms and Reactive forms
+> form field validation
+> template directive - efficiency of NO redraw
+> example: move from Angular 5 to recent Angular
+> after lunch exercise
+> Life-cycle events, ngOnInit event
 
 Friday
-- using classes (for typing, accessor/mutator etc.)
-- bullet proofing code: try-catch-finally etc.
-- generic design patterns
-- consolidate: what are the various 'directives'
-- passing data around
-- ECMAScript features
+q - can we determine the exact version of Angular being used
+see https://stackoverflow.com/questions/34907682/how-to-display-the-app-version-in-angular
+Alterntatively see
+<app-root _nghost-c0="" ng-version="4.4.7"><article _ngcontent-c0="">
+</app-root>
+Or just ng --version
+
+> populate a table with *ngFor (and index) 
+> passing an index to an iterable
+> RxJS and Observables see https://v6.rxjs.dev/ and https://rxmarbles.com/
+> building scalable apps (stateful apps) - use custom classes/interfaces
+> difference between ng-template and ng-content
+> using classes, interfaces and types (for typing, accessor/mutator etc.)
+> bullet proofing code: try-catch-finally etc.
+> generic design patterns
+> after lunch exercise
+> consolidate: what are the various 'directives'
+> passing data around (inc persistent data)
+> ECMAScript features: arrow functions, ...rest, back-ticks
 
 Course repo
 https://github.com/onionmccabbage/angularMay2022
 remember to npm install (retrieves all teh node modules)
 
+Course Recordings...
 
 
 

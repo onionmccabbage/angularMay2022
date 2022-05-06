@@ -1,0 +1,36 @@
+Agnular Review Exerice 3 until tea break at 3:00
+========================
+Create a new app called 'swapi' ng new swapi-app (include routing if asked)
+In the app.module, add HTTPClientModule, FormsModule, ReactiveFormsModule, RoutingModule and Routes
+
+Generate a service and two components: 'search' and 'detail'
+Write a method in the service to retrieve data from the SWAPI API end-point
+    `https://swapi.dev/api/${category}/${id}/`
+    e.g. https://swapi.dev/api/people/1/
+
+In your 'search' component write a form (either template or reactive) including:
+  One <input> field for the 'category' (category can be people, planets, species, vehicles or starships)
+  One <input type='number' min="1" max="9"/> for the 'id' (returns an integer from 1-9 as a string)
+Bind these fields to data models in the 'search' component (e.g. 'category' and 'id') 
+Validate the 'category' field to be a non-empty string of at least 5 characters
+Provide default values to the 'search' component by injecting @Input() values for 'category' and 'id'
+
+In the 'search' component form provide a button
+Clicking the button should call the service, passing values as parameters for category and id
+You can check the returned data like this: <pre>{{returnedData |json}}</pre>
+Show the 'name' property from the returned data (all categories return a 'name')
+Show other relevant data members in the 'detail' component (different categories return different data)
+
+NB the 'vehicles' category fails for some id numbers
+
+When the child component receives new content, emit a custom event ( an @Output() )
+Attach data to the custom event indicating a 'last updated' timestamp. Show this in the top level 'app' component
+
+Optional
+========
+Consider how routing could be used to pass parameters to different category components
+(You may need a component for people, planets, species etc.)
+For example, provide routes for '/people/1' and '/species/3' to show relevant results in a router outlet
+Also, try passing the id as a parameter, so '/planets/:id' would permit any planet id to be passed in to the 'planets' component
+
+Use ng build --prod to create a production version of the app
